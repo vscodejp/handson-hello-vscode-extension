@@ -1,5 +1,9 @@
 # Hello VS Code Extension ハンズオンテキスト
 
+## VS Code Meetup Book 1 リソース
+
+- [1.9.節 課題 1 利用ファイルのダウンロード task.zip](https://github.com/vscodejp/handson-hello-vscode/raw/master/topic9/task.zip)
+
 ## ハンズオンのターゲットレベル
 
 ### ターゲット
@@ -31,6 +35,8 @@
 
 ## コンテンツ
 
+### 事前準備
+
 - [Topic 0.1 : 作成する拡張機能を確認しよう](./topic0.1/README.md)
   - やってもらうこと: 完成品の拡張機能を使い，機能を確認する
   - 扱うこと: 拡張機能インストール，拡張機能無効化
@@ -39,44 +45,41 @@
   - やってもらうこと: Node.js, Git, Yaomanをインストールする
   - 扱うこと: npmインストールを行う
   - ゴール: 必要な依存関係を揃えること
-- [Topic 1 : Hello Worldを作成しよう](./topic1/README.md)
+
+### 開発編(すべて独立)
+
+- [Topic A : Hello Worldを作成しよう](./topic1/README.md)
   - やってもらうこと: プロジェクトを作成する，プロジェクトを開く，プロジェクトを起動する
   - 扱うこと: vsce，フォルダを開く
   - ゴール: プロジェクトの作成とデバッグができること
-- [Topic 2 : Package.jsonを読んでみよう](./topic2/README.md)
-  - やってもらうこと:
-  - 扱うこと: エクスプローラービュー、ファイルの保存、プレビュー
-  - ゴール: エクスプローラービューからファイルを開いて、編集ができること
-- [Topic 3 : スニペットを追加しよう](./topic3/README.md)
+- [Topic B : スニペットを追加しよう](./topic3/README.md)
   - やってもらうこと: スニペットファイルを作って自動補完機能を作る
   - 扱うこと: スニペットファイルを作成，package.jsonを編集
   - ゴール: 顔文字や絵文字を一瞬で生成する
-- [Topic 4 : リントでソースコードを検証しよう](./topic4/README.md)
-  - やってもらうこと: Code Actionの検証機能を使って顔文字`(^^)`を注意する
+- [Topic C : リントでソースコードを検証・修正しよう](./topic4/README.md)
+  - やってもらうこと: Code Actionの検証機能を使って顔文字`(^^)`を😀に変える
   - 扱うこと: CodeActionProvider
   - ゴール: 目的のリントツールが作成できること
-- [Topic 5 : リントでソースコードを修正しよう](./topic5/README.md)
-  - やってもらうこと: Code Actionの修正機能を使って`(^^)`を😀に変える
-  - 扱うこと: CodeActionProvider
-  - ゴール: 目的の修正が行えること
-- [Topic 6 : 拡張機能をカスタマイズ可能にしよう](./topic7/README.md)
-  - やってもらうこと: 置き換える文字セットを変更可能にする
-  - 扱うこと: contributeの概念，vscodeの設定
-  - ゴール: 設定から`:)`を🙆に書き換えれる拡張機能に変更できることを確認する
-- [Topic 7 : 作成した拡張機能をテストしよう](./topic7/README.md)
+- [Topic C' : Language Server Protocolを作ってみよう](./topic4/README.md)
+  - やってもらうこと: LSPを使って顔文字`(^^)`を😀に変える
+  - 扱うこと: LSP
+  - ゴール: 目的のリントツールが作成できること
+
+### デプロイ編（すべて独立）
+
+- [Topic D : 作成した拡張機能をテストしよう](./topic7/README.md)
   - やってもらうこと: 拡張機能のユニットテスト
   - 扱うこと: jest
   - ゴール: Jestのテストコードを作成し，ユニットテストを行う
-- [Topic 8 : 作成した拡張機能をインストールしよう](./topic7/README.md)
+- [Topic E : 作成した拡張機能をインストールしよう](./topic7/README.md)
   - やってもらうこと: 拡張機能をパッケージ化し，インストールする
   - 扱うこと: `vsce package`
   - ゴール: 自分で作った拡張機能をインストールする
 
 ## 逆にこのコンテンツでは扱わないこと
 
-- Language Server Protocol
 - ウェブビュー
-- キーアインド
+- キーキーバインド
 - Webpack
 - カラーテーマ
 - マルチルート
