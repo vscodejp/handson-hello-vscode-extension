@@ -13,21 +13,22 @@ LSPとは，コード補完や，変数参照，スタイル修正といった�
 * エディタの構造を知りたい人
 * 色んなエディタをいじってみたい人
 
-もしこの記事の内容が難しすぎる場合，以下のリンクから基礎的な学習を行えます．
+もしこのドキュメントの内容が難しすぎる場合，お気軽にYoutubeのコメントや[GitHub Discussions](https://github.com/vscodejp/handson-hello-vscode-extension/discussions)でご意見をお寄せください．
+また，以下のリンクから基礎的な学習を行えます．
 
 * [TypeScript](http://js.studio-kingdom.com/typescript/)
 * [Npm パッケージ](https://qiita.com/dondoko-susumu/items/cf252bd6494412ed7847)
 
-この記事ではTypeScriptを利用していますが，あまり高度な機能は利用しないため，JavaScript，もしくは他の言語にふれたことがあれば大丈夫です．
+本ハンズオンではTypeScriptを利用していますが，あまり高度な機能は利用しないため，JavaScript，もしくは他の言語にふれたことがあれば大丈夫です．
 
 ## 今回行うこと
 
 * Hello Worldを表示 (本ドキュメント)
-* Linterコース
-  * [特定の文章に対して警告を出す]()
-  * [警告に対して自動修正を行う]()
-* 補完機能コース
-  * ["VS Code", "Visual Studio Code"を補完入力する]()
+* [Linterコース](https://github.com/vscodejp/handson-hello-vscode-extension/blob/main/docs/expert/02_linter.md)
+  * [特定の文字列に対して警告を出す](https://github.com/vscodejp/handson-hello-vscode-extension/blob/main/docs/expert/02_linter.md#%E8%AD%A6%E5%91%8A%E6%A9%9F%E8%83%BD%E3%81%AE%E5%AE%9F%E8%A3%85)
+  * [警告に対して自動修正を行う](https://github.com/vscodejp/handson-hello-vscode-extension/blob/main/docs/expert/02_linter.md#%E8%87%AA%E5%8B%95%E4%BF%AE%E6%AD%A3%E6%A9%9F%E8%83%BD%E3%81%AE%E5%AE%9F%E8%A3%85)
+* [補完機能コース](https://github.com/vscodejp/handson-hello-vscode-extension/blob/main/docs/expert/03_compaleson.md)
+  * "VS Code", "Visual Studio Code"を補完入力する
 
 ### 行わないこと
 
@@ -37,16 +38,16 @@ LSPとは，コード補完や，変数参照，スタイル修正といった�
 ## 開発環境
 
 * [Visual Studio Code](https://code.visualstudio.com/)
-* [Node JS](https://nodejs.org/) x64, version >= 10.x, <= 12.x
+* [Node JS](https://nodejs.org/) x64, version >= 16.x, < 17.x
 
 ## Hello World
 
 コンピュータープログラミングにおける古来の伝統に従い，最初に作るアプリケーションは「Hello World」を表示するプログラムにしましょう．
 
-[簡素なテンプレート](https://github.com/Ikuyadeu/vscode-language-server-template)を用意しましたのでそれをクローンしてVS Codeで開きましょう．
+[簡素なテンプレート](https://github.com/vscodejp/vscode-language-server-template)を用意しましたのでそれをクローンしてVS Codeで開きましょう．
 
 ```sh
-git clone https://github.com/Ikuyadeu/vscode-language-server-template.git
+git clone https://github.com/vscodejp/vscode-language-server-template.git
 code vscode-language-server-template
 ```
 
@@ -66,8 +67,7 @@ npm install
 4: 開いたエディタ上で`.txt`ファイル，もしくは`.md`ファイルを開いてみましょう．
 画像では`test.txt`の１行目に波線を表示させ，その上にマウスを置くと`Hello World`と表示させています．
 
-<img width="518" alt="Screen Shot 2019-12-22 at 0.27.56.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/221488/ece4c4c2-158b-c36a-9376-a025f80c1b73.png">
-
+![Hello Worldスクリーンショット](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/221488/ece4c4c2-158b-c36a-9376-a025f80c1b73.png)
 
 ### ファイル構成
 
@@ -93,7 +93,7 @@ npm install
 
 ### ソースコード解説
 
-<details><summary>サーバー側のソースコード</summary><div>
+<details><summary>サーバー側のソースコード`server/src/server.ts`</summary><div>
 
 ```ts:server/src/server.ts
 'use strict';
@@ -206,7 +206,7 @@ function setupDocumentsListeners() {
 connection.listen();
 ```
 </div></details>
-<details><summary>クライアント側のソースコード</summary><div>
+<details><summary>クライアント側のソースコード`client/src/extension.ts`</summary><div>
 
 ```ts:client/src/extension.ts
 'use strict';

@@ -5,6 +5,7 @@
 
 ## CodeTourのインストール
 
+![CodeTour](../../images/expert_codetour.png)
 
 ## CodeTourの使い方
 
