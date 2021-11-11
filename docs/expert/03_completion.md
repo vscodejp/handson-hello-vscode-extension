@@ -2,7 +2,7 @@
 
 ## ブランチ切り替え
 
-補完機能の実装CodeTourを使うためには，ブランチを切り替える必要があります．
+補完機能の実装用CodeTourを使うためには，ブランチを切り替える必要があります．
 
 ```sh
 git checkout -b completion
@@ -56,9 +56,10 @@ function setupDocumentsListeners() {
 			];
 		}
 	);
+}
 ```
 
-次にラベル付けされた補完リストの詳細を定義する関数を定義します．
+次に`setupDocumentsListeners`の中でラベル付けされた補完リストの詳細を定義する関数を定義します．
 
 ```ts
     ...
