@@ -62,7 +62,16 @@
   - 扱うこと: extension.ts，package.jsonを編集
   - ゴール: ボタンからHello Worldを呼び出す
 
-### 中級者向け: Language Server Protocolを使ったリンター
+### 中級者向け: Language Server Protocol (LSP)を使ったコード修正・補完機能開発
+
+- [事前準備: LSPハンズオンの進め方](./docs/expert/00_codetour.md)
+  - やってもらうこと: ハンズオンで利用する資料の使い方を確認する
+  - 拡張機能インストール，CodeTourを起動する
+  - ゴール: CodeTourを使えるようになる
+
+- [予備知識: Language Server Protocol (LSP)とは？](./docs/expert/00_what_is_lsp.md)
+  - やってもらうこと: 拡張機能開発の種類とLSPについて確認する
+  - ゴール: LSPの利点や勉強方法を知る
 
 - [必須: LSP拡張機能を作成しよう](./docs/expert/01_hello.md)
   - やってもらうこと: プロジェクトを作成する，プロジェクトを開く，プロジェクトを起動する
