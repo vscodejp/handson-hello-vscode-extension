@@ -80,11 +80,11 @@
 
 - [コースA: ソースコード検証・修正機能を実装しよう](docs/expert/02_linter.md)
   - コード検証機能を実装しよう
-    - やってもらうこと: LSPを使って`VSCode`, `VScode`, `Vscode`の言語を検証する
+    - やってもらうこと: LSPを使って3文字以上の大文字を検証する
     - 扱うこと: server.tsの編集，コード検証機能の編集
     - ゴール: エディタ上で該当文字を入力することで言語を検証する
   - コード修正機能を実装しよう
-    - やってもらうこと: LSPを使って`VSCode`を`VS Code`に変える
+    - やってもらうこと: LSPを使って大文字を小文字に変える
     - 扱うこと: server.tsの編集，コード編集機能の実装
     - ゴール: 目的のリントツールが作成できること
 
@@ -112,12 +112,11 @@
 
 - スクリーンショットは以下の環境で撮影する
   - .vscode/settings.json に設定済み
-    - Color Theme: Dark+(default dark)
+    - Color Theme: Light+(default light)
     - Icon Theme: VS Seti
     - Product Icon Theme: Default
   - Display Language : ja
 - キーボードショートカットを紹介する場合には、macOS: Cmd+P、Windows・Linux: Ctrl+P と、Windows、macOS、Linux の各環境のキーバインドを書くようにする。
-- Prettier でフォーマットする（自動でフォーマットされます）
 
 カスタマイズに影響を受けずに、このリポジトリを開くには以下のように cli で実行します。
 

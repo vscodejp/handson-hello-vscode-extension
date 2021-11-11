@@ -1,5 +1,15 @@
 # リンターツールの実装
 
+本コースではリンター，つまりコードの検証や自動修正を行うツールを開発します。
+
+## ブランチ切り替え
+
+補完機能の実装CodeTourを使うためには，ブランチを切り替える必要があります．
+
+```sh
+git checkout -b linter
+```
+
 ## 警告機能の実装
 
 次に，大文字に対して警告文を出す実装を行います．
@@ -49,9 +59,10 @@ TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
 ANY browser. ANY shost. ANY OS. Open Source.
 ```
 
-ファイル中の大文字`ANY`や`OS`に対して以下のように波線で警告が出るはずです．
+ファイル中の大文字列`COBOL`や`PHP`に対して以下のように波線で警告が出るはずです．
+逆に一文字だけの`C`などには警告は出ません．
 
-![Screen Shot 2019-12-21 at 18.32.41.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/221488/6af5e459-0452-cd32-7107-98a16930843a.png)
+![Screen Shot 2019-12-21 at 18.32.41.png](../../images/expert_linter_alert.png)
 
 ## 自動修正機能の実装
 
@@ -128,4 +139,4 @@ function setupDocumentsListeners() {
 ```
 
 警告に電球マークが付き，該当箇所を小文字に修正します．
-![Screen Shot 2019-12-21 at 18.37.01.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/221488/a8748309-ad2f-3459-9e68-ed65c11c1478.png)
+![Screen Shot 2019-12-21 at 18.37.01.png](https://github.com/vscodejp/vscode-language-server-template/raw/linter/usage.gif)
