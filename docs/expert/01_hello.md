@@ -2,24 +2,8 @@
 
 ## はじめに
 
-本ハンズオンでは[**L**anguage **S**erver **P**rotocol](https://microsoft.github.io/language-server-protocol/) (以下，**LSP**)を用いたエディタの拡張機能開発を行います．
+本コースでは[**L**anguage **S**erver **P**rotocol](https://microsoft.github.io/language-server-protocol/) (以下，**LSP**)を用いたエディタの拡張機能開発を行います．
 LSPとは，コード補完や，変数参照，スタイル修正といった機能実装を[あらゆるエディタ/IDE](https://microsoft.github.io/language-server-protocol/implementors/tools/) へ提供するプロトコルです．
-
-本ハンズオンでは[Visual Studio Code](https://code.visualstudio.com/)を用いて拡張機能開発を行いますが，作成した機能は[Vim](https://www.vim.org/)や[Emacs](https://www.gnu.org/software/emacs/)でも使えます．
-
-## 対象読者
-
-* エディタ開発に興味がある人
-* エディタの構造を知りたい人
-* 色んなエディタをいじってみたい人
-
-もしこのドキュメントの内容が難しすぎる場合，お気軽にYoutubeのコメントや[GitHub Discussions](https://github.com/vscodejp/handson-hello-vscode-extension/discussions)でご意見をお寄せください．
-また，以下のリンクから基礎的な学習を行えます．
-
-* [TypeScript](http://js.studio-kingdom.com/typescript/)
-* [Npm パッケージ](https://qiita.com/dondoko-susumu/items/cf252bd6494412ed7847)
-
-本ハンズオンではTypeScriptを利用していますが，あまり高度な機能は利用しないため，JavaScript，もしくは他の言語にふれたことがあれば大丈夫です．
 
 ## 今回行うこと
 
@@ -29,10 +13,6 @@ LSPとは，コード補完や，変数参照，スタイル修正といった�
   * [警告に対して自動修正を行う](https://github.com/vscodejp/handson-hello-vscode-extension/blob/main/docs/expert/02_linter.md#%E8%87%AA%E5%8B%95%E4%BF%AE%E6%AD%A3%E6%A9%9F%E8%83%BD%E3%81%AE%E5%AE%9F%E8%A3%85)
 * [補完機能コース](https://github.com/vscodejp/handson-hello-vscode-extension/blob/main/docs/expert/03_compaleson.md)
   * "VS Code", "Visual Studio Code"を補完入力する
-
-### 行わないこと
-
-* リモート環境・マルチルートワークスペースを考慮した機能開発
 
 ## 開発環境
 

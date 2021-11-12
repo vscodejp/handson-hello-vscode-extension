@@ -21,6 +21,16 @@
 - 各 Topic の内容を以下に記載していますので、できそうなところはスキップして、気になるところから進めていただいて構いません。
 - 各 Topic 課題が設定されていますが、課題をクリアーしなければいけないことはありません。興味のある部分から進めていただければと思います。
 
+## 内容がむずかしいと思ったとき
+
+もしこのドキュメントの内容が難しすぎる場合，お気軽にYoutubeのコメントや[GitHub Discussions](https://github.com/vscodejp/handson-hello-vscode-extension/discussions)でご意見をお寄せください．
+また，以下のリンクから基礎的な学習を行えます．
+
+- [TypeScript](http://js.studio-kingdom.com/typescript/)
+- [Npm パッケージ](https://qiita.com/dondoko-susumu/items/cf252bd6494412ed7847)
+
+本ハンズオンではTypeScriptを利用していますが，あまり高度な機能は利用しないため，JavaScript，もしくは他の言語にふれたことがあれば大丈夫です．
+
 ## 参加についての心構え
 
 - 拡張機能開発には多くのつまづきポイントがあります．操作で悩む所、よくわからないところがあれば、気にせず質問して下さい。
@@ -34,11 +44,6 @@
   - やってもらうこと: VS Code, Node.js 16.xx, Git, Yeoman, ESLintをインストールする，GitHubアカウントを用意してもらう
   - 扱うこと: npmインストールを行う
   - ゴール: 必要な依存関係を揃えること
-
-<!-- - [Topic 0.2 : 作成する拡張機能を確認しよう](./topic0.2/README.md)
-  - やってもらうこと: 完成品の拡張機能を使い，機能を確認する
-  - 扱うこと: 拡張機能インストール，拡張機能無効化
-  - ゴール: 手本の拡張機能をインストールし，その後無効化すること -->
 
 ### 初心者向け
 
@@ -88,14 +93,14 @@
     - 扱うこと: server.tsの編集，コード編集機能の実装
     - ゴール: 目的のリントツールが作成できること
 
-- [コースB: 補完機能を実装しよう](./docs/expert/03_compaleson.md)
+- [コースB: 補完機能を実装しよう](./docs/expert/03_completion.md)
   - やってもらうこと: `Visual Studio Code`, `VS Code`の補完を行う
   - 扱うこと: server.tsを編集，補完機能の実装
   - ゴール: エディタ上で該当文字を入力することで補完を行う
 
 ### コースを完了した人向け
 
-- [作成した拡張機能をインストールしよう](./courseA++/README.md)
+- [作成した拡張機能をインストールしよう](./expert/04_publish.md)
   - やってもらうこと: 拡張機能をパッケージ化し，インストールする
   - 扱うこと: `vsce package`
   - ゴール: 自分で作った拡張機能をインストールする
@@ -115,7 +120,7 @@
     - Color Theme: Light+(default light)
     - Icon Theme: VS Seti
     - Product Icon Theme: Default
-  - Display Language : ja
+  - Display Language: ja
 - キーボードショートカットを紹介する場合には、macOS: Cmd+P、Windows・Linux: Ctrl+P と、Windows、macOS、Linux の各環境のキーバインドを書くようにする。
 
 カスタマイズに影響を受けずに、このリポジトリを開くには以下のように cli で実行します。

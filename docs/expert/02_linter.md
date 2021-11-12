@@ -70,6 +70,9 @@ ANY browser. ANY shost. ANY OS. Open Source.
 
 引き続き，`server/src/server.ts`を編集します．`import`以下と関数`setupDocumentsListeners`を以下のコードに編集してみましょう．ここまでの過程で，つまづいた場合は[出来上がったもの](https://github.com/Ikuyadeu/vscode-language-server-template/tree/completed)を`completed`ブランチとして用意してありますのでそちらをご利用ください．
 
+
+まずは`import`部分を以下のコードに編集してみましょう．
+
 ```ts:import文
 import {
     CodeAction,
@@ -84,6 +87,8 @@ import {
     TextEdit,
 } from "vscode-languageserver";
 ```
+
+次に`setupDocumentsListeners`関数を以下のコードに編集してみましょう．
 
 ```ts:関数setupDocumentsListeners
 function setupDocumentsListeners() {
@@ -103,7 +108,7 @@ function setupDocumentsListeners() {
 
     // Code Actionを追加する
     connection.onCodeAction((params) => {
-        // sampleから生成した渓谷のみを対象とする
+        // sampleから生成した警告のみを対象とする
         const diagnostics = params.context.diagnostics.filter((diag) => diag.source === "sample");
         // 対象ファイルを取得する
         const textDocument = documents.get(params.textDocument.uri);
@@ -138,5 +143,17 @@ function setupDocumentsListeners() {
 }
 ```
 
-警告に電球マークが付き，該当箇所を小文字に修正します．
+## 実際に使ってみる
+
+F5キー(環境によってはfn + F5キー)で実行してみましょう．
+
+警告に電球マークが付き，クリックすると該当箇所を小文字に修正します．
+
 ![Screen Shot 2019-12-21 at 18.37.01.png](https://github.com/vscodejp/vscode-language-server-template/raw/linter/usage.gif)
+
+## 発展課題
+
+* 好きなリンター機能を実装してみよう．
+  * `VSCode`や`VS code`を`VS Code`に修正するリンターを作ろう．
+  * その他よくある間違いを修正するリンターを作ろう．(例えば`Javascript`を`JavaScript`に修正するリンター)
+* （まだなら）[コースBの補完機能](https://github.com/vscodejp/handson-hello-vscode-extension/blob/main/docs/expert/03_completion.md)を実装してみよう．

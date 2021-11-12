@@ -79,11 +79,13 @@ function setupDocumentsListeners() {
 	);
 ```
 
-## 使ってみよう
+## 実際に使ってみる
 
-## テストしよう
+## 機能をテストする
 
 ## 発展課題
 
-* 好きな言語の補完機能を実装してみよう．(package.jsonでの対応言語設定を忘れないように)
-* 補完機能を実装したら，テストしてみよう．
+* 好きな言語の補完機能を実装してみましょう．(package.jsonでの対応言語設定(`activationEvent`)を忘れないように)
+  * 標準入力 (`int(input())`など)と標準出力 (print文など)を補完してみましょう．
+  * 補完機能を実装したら，テストしましょう．
+* （まだなら）[コースAのリンター機能](https://github.com/vscodejp/handson-hello-vscode-extension/blob/main/docs/expert/02_linter.md)を実装してみましょう．
