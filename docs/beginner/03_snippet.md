@@ -31,7 +31,7 @@ https://marketplace.visualstudio.com/search?target=VSCode&category=Snippets&sort
 スニペットの対象にする言語 ID を指定します。指定した言語でスニペットが使えるようになります。
 言語 ID とは、コマンド『言語モードの変更』を実行した時に表示される、()で囲われた識別子として表示される値です。
 
-![言語ID](../../images/begginer_snippets_language_id.png)
+![言語ID](../../images/beginner_snippets_language_id.png)
 
 ```sh
 $ yo code
@@ -109,7 +109,7 @@ Open with `code`
 
 実際に拡張機能を実行して見るには、`F5`を押して、拡張機能を有効にした VS Code を起動させます。その起動した VS Code でマークダウンファイルを開き、Ctrl+Space（MacOS の場合、Cmd+Space）を押して、表示される補完の候補に先程追加した『年月日』が含まれていて、利用できることを確認しましょう。
 
-![テスト](../../images/begginer_snippets_testing.png)
+![テスト](../../images/beginner_snippets_testing.png)
 
 ## 課題 1
 
