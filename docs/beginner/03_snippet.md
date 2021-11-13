@@ -47,7 +47,7 @@ New Code Snippets
 Markdown Japanese Snippets
 **拡張機能のID（全小文字）**
 ? What's the identifier of your extension?
-japanese-markdown-snippets
+markdown-japanese-snippets
 **拡張機能の説明**
 ? What's the description of your extension?
 （空欄のまま）
