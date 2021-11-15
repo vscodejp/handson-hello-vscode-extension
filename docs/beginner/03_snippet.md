@@ -3,7 +3,7 @@
 スニペットとは、コード中に差し込めるテンプレート機能のことです。
 プログラミング言語やフレームワークなどのスニペットが、拡張機能として提供されています。
 
-https://marketplace.visualstudio.com/search?target=VSCode&category=Snippets&sortBy=Installs
+<https://marketplace.visualstudio.com/search?target=VSCode&category=Snippets&sortBy=Installs>
 
 ここでは、スニペットの拡張機能の作り方について解説します。スニペットの基本的な使い方を知りたい場合は、Hello VS Code Handson でも、解説しています。
 
@@ -71,7 +71,7 @@ Open with `code`
 └── package.json
 ```
 
-```
+```json
 // snippets/snippets.code-snippets
 {
   "日付入力": {
@@ -83,7 +83,7 @@ Open with `code`
 
 マニフェストファイル（package.json)の 拡張機能が作用するポイント（Contribution Points）である "contributes"."snippets" にこのスニペットファイルへのパスが書かれています。1 つのスニペットファイルには複数のスニペットを書くことができますが、複数の言語 ID に対応したり、ファイルを分けたい場合は、ここに追加で列挙します。
 
-```
+```json
 {
     "name": "markdown-japanese-snippets",
     "displayName": "Markdown Japanese Snippets",
