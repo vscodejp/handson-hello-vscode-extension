@@ -118,6 +118,7 @@ export function activate(context: ExtensionContext) {
 2.で作成した CodeLensProvider の関数 provideCodeLenses の中でドキュメントを解析し、抽出した範囲に対してコードレンズを登録します。
 
 ```ts
+// src/extension.ts
 const titleRegex = /^#+\s/g;
 
 /**
@@ -190,7 +191,12 @@ export class CodelensProvider implements vscode.CodeLensProvider {
 このメソッドの呼び出しは編集する内容を登録するだけで、呼び出した時に編集が行われるわけではありません。
 実際にテキストが編集されるタイミングは、VS Code の中で制御されています。
 
+なお、editBuilder で、insert での挿入箇所を指定するには、[vscode.Position](https://code.visualstudio.com/api/references/vscode-api#Position) を使います。delete, replace では、範囲に指定には vscode.Position を 2 つを引数に取る [vscode.Range](https://code.visualstudio.com/api/references/vscode-api#Range) を使います。この 2 つのクラスは、VS Code API の様々な箇所で登場します。
+
 ```ts
+// src/extension.ts
+import * as vscode from "vscode";
+
 let disposables: Disposable[] = [];
 
 export function activate(context: ExtensionContext) {
