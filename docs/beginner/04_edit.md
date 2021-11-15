@@ -1,14 +1,14 @@
-## ドキュメントを編集しよう
+# ドキュメントを編集しよう
 
 本節では、ドキュメント上に表示されるコードレンズのボタンを押して、ドキュメントを編集する拡張機能を作ります。
 
-マークダウンの見出しである `#` が含まれる行に、CodeLens のボタンを用意して、そのボタンが押されたときに Markdown を編集して、日付が追加される機能を実装してみましょう
+マークダウンの見出しである `#` が含まれる行に、CodeLens のボタン "add date" を用意して、そのボタンが押されたときに Markdown を編集して、日付が追加される機能を実装してみましょう
 
 ![](../../images/beginner_codelens.png)
 
 ![](../../images/beginner_textedit.png)
 
-### この機能の動作手順
+## この機能の動作手順
 
 ドキュメントを編集する機能が動作するまでの手順は、今回は以下のようにしています。
 
@@ -19,13 +19,13 @@
 
 コマンドをコードレンズのボタン経由で呼び出していますが、前節の Hello World コマンドのように、コマンドを直接定義して実行することも可能です。 1~3 の部分は、コマンドを実行する上でのおまけの機能のため、手っ取り早くコマンドの実装の仕方を知るために、1~3 の部分はコピー&ペーストしていただいても構いません。
 
-### 準備
+## 準備
 
 先に [Hello World を起動しよう](./02_build.md) を行い、TypeScript の拡張機能として、拡張機能を作成してください。
 
 本節では、日付を扱うため、日付を便利に扱う Node パッケージ dayjs をインストールしてください。インストールするには、ターミナルで以下を実行してください。
 
-```
+```sh
 # npm の場合
 $ npm install --save dayjs
 
@@ -33,7 +33,7 @@ $ npm install --save dayjs
 $ yarn add dayjs
 ```
 
-### 1. Markdown を開いたときに拡張機能が起動するようにする。
+## 1. Markdown を開いたときに拡張機能が起動するようにする
 
 拡張機能が起動する条件は、拡張機能のマニフェストファイル package.json の activationEvents に設定します。
 activationEvents では、 `onLanguage:<言語ID>` とすると、言語 ID のファイルを開いたときに拡張機能が起動するように設定できます。
@@ -56,7 +56,7 @@ activationEvents では、 `onLanguage:<言語ID>` とすると、言語 ID の�
 
 activationPoints のリストは [公式ドキュメント](https://code.visualstudio.com/api/references/activation-events) を確認ください。
 
-### 2. 拡張機能が起動したときに CodeLensProvider を起動する
+## 2. 拡張機能が起動したときに CodeLensProvider を起動する
 
 先に、CodeLensProvider のドキュメントを実装しましょう。src/extension.ts に以下のコードを追加してください。
 
@@ -113,12 +113,14 @@ export function activate(context: ExtensionContext) {
 関数 registerCodeLensProvider の 1 つめの引数には、この CodeLensProvider を有効化する条件である [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector) を設定します。
 この実装で、言語 ID が markdown のファイルに対して、CodeLensProvider の provideCodeLenses 関数が実行されるようになります。
 
-### 3. ドキュメントを解析して、CodeLens を表示しよう
+## 3. ドキュメントを解析して、CodeLens を表示しよう
 
 2.で作成した CodeLensProvider の関数 provideCodeLenses の中でドキュメントを解析し、抽出した範囲に対してコードレンズを登録します。
 
 ```ts
 // src/extension.ts
+
+// # から始まる文字列を取得する
 const titleRegex = /^#+\s/g;
 
 /**
@@ -175,7 +177,7 @@ export class CodelensProvider implements vscode.CodeLensProvider {
 
 ![](../../images/beginner_codelens.png)
 
-### 4. コマンドを実行してドキュメントを編集しよう
+## 4. コマンドを実行してドキュメントを編集しよう
 
 いよいよコマンドを実行して、ドキュメントの内容を編集を行います。
 
@@ -277,7 +279,7 @@ export class CodelensProvider implements vscode.CodeLensProvider {
 
 これで、CodeLens からコマンドを呼び出す実装ができました。
 
-デバッグ実行を開始してみて、コードレンズが押せるようになっていることを確認してください。コードレンズを押すと、テキストが編集されることを確認してください。
+デバッグ実行を開始してみて、コードレンズ "add date" が押せるようになっていることを確認してください。コードレンズを押すと、テキストが編集されることを確認してください。
 
 ![](../../images/beginner_codelens.png)
 
