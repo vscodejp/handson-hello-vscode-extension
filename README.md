@@ -62,10 +62,10 @@
   - 扱うこと: スニペットファイルを作成，package.jsonを編集
   - ゴール: 顔文字や絵文字を一瞬で生成する
 
-- [選択B: Hello Worldを編集しよう](./docs/beginner/04_edit.md)
-  - やってもらうこと: ソースコードを編集してHello Worldを呼び出す
+- [選択B: ドキュメントを編集しよう](./docs/beginner/04_edit.md)
+  - やってもらうこと: コードレンズのボタンからドキュメントを編集する
   - 扱うこと: extension.ts，package.jsonを編集
-  - ゴール: ボタンからHello Worldを呼び出す
+  - ゴール: コードレンズのボタンからドキュメントを編集する
 
 ### 中級者向け: Language Server Protocol (LSP)を使ったコード修正・補完機能開発
 
