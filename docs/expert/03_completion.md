@@ -3,10 +3,14 @@
 ## ブランチ切り替え
 
 補完機能の実装用CodeTourを使うためには，ブランチを切り替える必要があります．
+以下のコマンドを実行するか，エディタの左下のブランチ名`main`をクリックし，`origin/linter`を選んでください．
 
 ```sh
-git checkout -b completion
+git checkout -b completions origin/completions
+git checkout completions
 ```
+
+![ブランチの変更](../../images/expert_branch.png)
 
 ## サーバー設定
 
