@@ -34,7 +34,8 @@
 ## 参加についての心構え
 
 - 拡張機能開発には多くのつまづきポイントがあります．操作で悩む所、よくわからないところがあれば、気にせず質問して下さい。
-- 質問はYoutubeのコメントの他，本リポジトリの[Discussion](https://github.com/vscodejp/handson-hello-vscode-extension/discussions)からも受け付けています
+- 質問はYoutubeのコメントの他，本リポジトリの[Discussion](https://github.com/vscodejp/handson-hello-vscode-extension/discussions)からも受け付けています．
+- 質問にはスクリーンショットも一緒に添付してもらえると回答しやすいです．
 
 ## コンテンツ
 

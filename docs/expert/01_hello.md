@@ -43,7 +43,7 @@ npm install
 ```
 
 3: `F5` キーを入力することで拡張機能をインストールしたVS Codeを立ち上げます．
-4: 開いたエディタ上で`.txt`ファイル，もしくは`.md`ファイルを開いてみましょう．
+4: 開いたエディタ上で`.txt`ファイル，もしくは`.md`ファイルを開いてみましょう．ない場合は新たに`test.txt`などの文章を作成しましょう．
 画像では`test.txt`の１行目に波線を表示させ，その上にマウスを置くと`Hello World`と表示させています．
 
 ![Hello Worldスクリーンショット](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/221488/ece4c4c2-158b-c36a-9376-a025f80c1b73.png)
