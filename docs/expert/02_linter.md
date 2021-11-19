@@ -57,7 +57,7 @@ function validate(doc: TextDocument) {
 }
 ```
 
-もう一度`F5`キーで実行し以下のファイルを作ってみましょう
+もう一度`Launch Client`を選択，または`F5`キーで実行し以下のファイルを作ってみましょう
 
 ```txt:README.md
 TypeScript lets you write JavaScript the way you really want to.
@@ -151,7 +151,7 @@ function setupDocumentsListeners() {
 
 ## 実際に使ってみる
 
-F5キー(環境によってはfn + F5キー)で実行してみましょう．
+`Launch Client`またはF5キーで実行してみましょう．
 
 警告に電球マークが付き，クリックすると該当箇所を小文字に修正します．
 

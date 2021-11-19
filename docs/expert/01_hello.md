@@ -42,7 +42,10 @@ code vscode-language-server-template
 npm install
 ```
 
-3: `F5` キーを入力することで拡張機能をインストールしたVS Codeを立ち上げます．
+3: エディタ下画面の`Launch Client`を選択し，`Client+Server`を選ぶ (または単に`F5` キーを入力する)ことで拡張機能をインストールしたVS Codeを立ち上げます．
+
+![拡張機能の立ち上げ](../../images/expert_launch.png)
+
 4: 開いたエディタ上で`.txt`ファイル，もしくは`.md`ファイルを開いてみましょう．ない場合は新たに`test.txt`などの文章を作成しましょう．
 画像では`test.txt`の１行目に波線を表示させ，その上にマウスを置くと`Hello World`と表示させています．
 
