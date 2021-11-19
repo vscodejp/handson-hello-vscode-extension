@@ -28,7 +28,6 @@
 そこで以下のコマンドからソースコード自動生成ツールのYaomanと、Yaomanのテンプレートパッケージ`generator-code`をインストールします。
 
 ```sh
-!!!cmd
 $ npm install -g yo generator-code
 ```
 
