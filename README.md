@@ -68,10 +68,14 @@
     - 扱うこと: server.tsの編集，コード編集機能の実装
     - ゴール: 目的のリントツールが作成できること
 
+![Linterの利用方法](./images/usage_linter.gif)
+
 - [コースB: 補完機能を実装しよう](./docs/expert/03_completion.md)
   - やってもらうこと: `Visual Studio Code`, `VS Code`の補完を行う
   - 扱うこと: server.tsを編集，補完機能の実装
   - ゴール: エディタ上で該当文字を入力することで補完を行う
+
+![補完機能の利用方法](./images/usage_completion.gif)
 
 ### コースを完了した人向け
 
