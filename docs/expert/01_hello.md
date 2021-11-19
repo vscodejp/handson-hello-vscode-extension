@@ -70,7 +70,119 @@ npm install
 └── README.md            // VS CodeプラグインとしてのREADME.md(説明書)
 ```
 
-### ソースコード解説
+## ソースコード解説
+
+### 拡張機能のメタファイル`package.json`
+
+今回は起動条件 (activationEvents) に `onLanguage:plaintext`と`onLanguage:markdown` つまり，プレーンテキストやマークダウンファイルを(拡張子が.txtまたは.md)開いた時を追加しています．
+
+```json
+...
+	"activationEvents": [
+		"onLanguage:plaintext",
+		"onLanguage:markdown"
+	],
+...
+```
+
+実行環境は`vscode`の1.61.0以上を前提としています．
+バージョンによってはAPIの利用方法が変わるので注意です．
+
+```json
+...
+	"engines": {
+		"vscode": "^1.61.0"
+	},
+...
+```
+
+利用する依存関係として，Language Serverと連携する`vscode-languageclient`と， UIなどエディタ側の機能を提供する`vscode`を使います．
+
+```json
+...
+	"devDependencies": {
+		"@types/vscode": "1.61.0"
+	},
+	"dependencies": {
+		"vscode-languageclient": "8.0.0-next.4"
+	}
+...
+```
+
+### クライアント側のソースコード
+
+こちらは長めなので展開式にしています．
+クライアント側のソースコードファイルは通常のVS Code拡張機能として実装しているため，VS Code APIを利用します．
+現在バージョンのクライアントパッケージは`vscode-languageclient/node`から呼び出せます．`vscode-languageclient`と間違えないよう注意してください．
+
+<details><summary>クライアント側のソースコード`client/src/extension.ts`</summary><div>
+
+```ts:client/src/extension.ts
+'use strict';
+
+import { ExtensionContext, window as Window, Uri } from 'vscode';
+import {
+	LanguageClient,
+	LanguageClientOptions,
+	RevealOutputChannelOn,
+	ServerOptions,
+	TransportKind } from 'vscode-languageclient/node';
+
+// 拡張機能が有効になったときに呼ばれる
+export function activate(context: ExtensionContext): void {
+	// サーバーのパスを取得
+	const serverModule =  Uri.joinPath(context.extensionUri, 'server', 'out', 'server.js').fsPath;
+	// デバッグ時の設定
+	const debugOptions = { execArgv: ['--nolazy', '--inspect=6011'], cwd: process.cwd() };
+
+	// サーバーの設定
+	const serverOptions: ServerOptions = {
+		run: {
+			module: serverModule,
+			transport: TransportKind.ipc,
+			options: { cwd: process.cwd() }
+		},
+		debug: {
+			module: serverModule,
+			transport: TransportKind.ipc,
+			options: debugOptions,
+		},
+	};
+	// LSPとの通信に使うリクエストを定義
+	const clientOptions: LanguageClientOptions = {
+		// 対象とするファイルの種類や拡張子
+		documentSelector: [
+			{ scheme: 'file' },
+			{ scheme: 'untitled' }
+		],
+		// 警告パネルでの表示名
+		diagnosticCollectionName: 'sample',
+		revealOutputChannelOn: RevealOutputChannelOn.Never,
+		initializationOptions: {},
+		progressOnInitialization: true,
+	};
+
+	let client: LanguageClient;
+	try {
+		// LSPを起動
+		client = new LanguageClient('Sample LSP Server', serverOptions, clientOptions);
+	} catch (err) {
+		void Window.showErrorMessage('拡張機能の起動に失敗しました。詳細はアウトプットパネルを参照ください');
+		return;
+	}
+
+	// 拡張機能のコマンドを登録
+	context.subscriptions.push(
+		client.start(),
+	);
+}
+```
+</div></details>
+
+### サーバー側のソースコード
+
+サーバー側のソースコードは`server/src/server.ts`と`server/src/package.json`です．
+これらはクライアント側の依存関係とは独立しています．
 
 <details><summary>サーバー側のソースコード`server/src/server.ts`</summary><div>
 
@@ -183,68 +295,5 @@ function setupDocumentsListeners() {
 
 // Listen on the connection
 connection.listen();
-```
-</div></details>
-<details><summary>クライアント側のソースコード`client/src/extension.ts`</summary><div>
-
-```ts:client/src/extension.ts
-'use strict';
-
-import { ExtensionContext, window as Window, Uri } from 'vscode';
-import {
-	LanguageClient,
-	LanguageClientOptions,
-	RevealOutputChannelOn,
-	ServerOptions,
-	TransportKind } from 'vscode-languageclient/node';
-
-// 拡張機能が有効になったときに呼ばれる
-export function activate(context: ExtensionContext): void {
-	// サーバーのパスを取得
-	const serverModule =  Uri.joinPath(context.extensionUri, 'server', 'out', 'server.js').fsPath;
-	// デバッグ時の設定
-	const debugOptions = { execArgv: ['--nolazy', '--inspect=6011'], cwd: process.cwd() };
-
-	// サーバーの設定
-	const serverOptions: ServerOptions = {
-		run: {
-			module: serverModule,
-			transport: TransportKind.ipc,
-			options: { cwd: process.cwd() }
-		},
-		debug: {
-			module: serverModule,
-			transport: TransportKind.ipc,
-			options: debugOptions,
-		},
-	};
-	// LSPとの通信に使うリクエストを定義
-	const clientOptions: LanguageClientOptions = {
-		// 対象とするファイルの種類や拡張子
-		documentSelector: [
-			{ scheme: 'file' },
-			{ scheme: 'untitled' }
-		],
-		// 警告パネルでの表示名
-		diagnosticCollectionName: 'sample',
-		revealOutputChannelOn: RevealOutputChannelOn.Never,
-		initializationOptions: {},
-		progressOnInitialization: true,
-	};
-
-	let client: LanguageClient;
-	try {
-		// LSPを起動
-		client = new LanguageClient('Sample LSP Server', serverOptions, clientOptions);
-	} catch (err) {
-		void Window.showErrorMessage('拡張機能の起動に失敗しました。詳細はアウトプットパネルを参照ください');
-		return;
-	}
-
-	// 拡張機能のコマンドを登録
-	context.subscriptions.push(
-		client.start(),
-	);
-}
 ```
 </div></details>
