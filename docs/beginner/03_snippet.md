@@ -24,7 +24,7 @@
 }
 ```
 
-『[Hello World を作成しよう](./01_build.md)』 と同様に、Yeoman を使って拡張機能を作成します。
+『[Hello World を作成しよう](./01_init.md)』 と同様に、Yeoman を使って拡張機能を作成します。
 
 拡張機能のタイプとして`New Code Snippets`を選択します。
 
