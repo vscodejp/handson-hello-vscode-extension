@@ -5,7 +5,7 @@
 
 * Visual Studio Code
 * Node.js
-* Yaoman
+* Yeoman
 * ESLint
 * 日本語化
 
@@ -25,7 +25,7 @@
 ## Yeoman ── ソースコードを自動生成するツール
 
 　プロジェクトを作成するときに一つ一つファイルを作るのは大変です。
-そこで以下のコマンドからソースコード自動生成ツールのYaomanと、Yaomanのテンプレートパッケージ`generator-code`をインストールします。
+そこで以下のコマンドからソースコード自動生成ツールのYeomanと、Yeomanのテンプレートパッケージ`generator-code`をインストールします。
 
 ```sh
 $ npm install -g yo generator-code
