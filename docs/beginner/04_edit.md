@@ -144,9 +144,7 @@ export class CodelensProvider implements vscode.CodeLensProvider {
     while ((matches = regex.exec(text)) !== null) {
       // 見出しが見つかった行を抽出し、
       // その範囲をレンジとして切り出す
-      const line = document.lineAt(document.positionAt(matches.index).line);
-      const indexOf = line.text.indexOf(matches[0]);
-      const position = new vscode.Position(line.lineNumber, indexOf);
+      const position = document.positionAt(matches.index);
       const range = document.getWordRangeAtPosition(
         position,
         new RegExp(titleRegex)
@@ -251,9 +249,7 @@ export class CodelensProvider implements vscode.CodeLensProvider {
     while ((matches = regex.exec(text)) !== null) {
       // 見出しが見つかった行を抽出し、
       // その範囲をレンジとして切り出す
-      const line = document.lineAt(document.positionAt(matches.index).line);
-      const indexOf = line.text.indexOf(matches[0]);
-      const position = new vscode.Position(line.lineNumber, indexOf);
+      const position = document.positionAt(matches.index);
       const range = document.getWordRangeAtPosition(
         position,
         new RegExp(titleRegex)
